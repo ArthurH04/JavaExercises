@@ -44,7 +44,13 @@ public class TemperatureConverter {
 			}
 			
 			System.out.println("\nWould you like to (C)onvert again or (Q)uit?");
-			controller = input.next().toUpperCase();
+			
+			do {
+				controller = input.next().toUpperCase();
+				if(!controller.equals("C") && !controller.equals("Q")) {
+					System.out.println("Invalid choice. Please enter 'C' to convert again or 'Q' to quit.");
+				}
+			}while (!controller.equals("C") && !controller.equals("Q"));
 			
 		} while (!controller.equals("Q"));
 		
